@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const mongoSanitize = require('express-mongo-sanitize');
 
 const app = express();
 
@@ -8,6 +9,7 @@ connectDB();
 
 //Init Middleware
 app.use(express.json({ extended: false }));
+app.use(mongoSanitize());
 
 const PORT = process.env.PORT || 3000;
 
