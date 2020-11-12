@@ -111,9 +111,9 @@ const AddExperience = ({ addExperience, history }) => {
 					></textarea>
 				</div>
 				<input type='submit' className='btn btn-primary my-1' />
-				<a className='btn my-1' href='dashboard.html'>
+				<Link className='btn my-1' to='/dashboard'>
 					Go Back
-				</a>
+				</Link>
 			</form>
 		</Fragment>
 	);
