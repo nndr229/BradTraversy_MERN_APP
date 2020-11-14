@@ -49,8 +49,9 @@ router.get('/', authMiddleware, async (req, res) => {
 	}
 });
 
-//Route GET api/posts/:id
-//Get single POST by  ID
+// @route    GET api/posts/:id
+// @desc     Get post by ID
+// @access   Private
 router.get('/:id', authMiddleware, async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id);
@@ -61,12 +62,9 @@ router.get('/:id', authMiddleware, async (req, res) => {
 
 		res.json(post);
 	} catch (err) {
-		console.log(err.message);
-		if (err.kind === 'ObjectId') {
-			return res.status(404).json({ msg: 'Post not found' });
-		}
+		console.error(err.message);
 
-		res.status(500).send('Server error');
+		res.status(500).send('Server Error');
 	}
 });
 
@@ -159,7 +157,6 @@ router.post(
 
 		try {
 			const user = await User.findById(req.user.id).select('-password');
-
 			const post = await Post.findById(req.params.id);
 
 			const newComment = {
@@ -175,6 +172,7 @@ router.post(
 
 			res.json(post.comments);
 		} catch (err) {
+			console.error(err.message);
 			console.log(err.message);
 			res.status(500).send('Server Error');
 		}
