@@ -1,7 +1,0 @@
-{
-	"mongoURI": "mongodb+srv://nndr229:kumar123@devconnector.remfs.mongodb.net/<dbname>?retryWrites=true&w=majority",
-	"jwtSecret": "nithinssecrettoken229",
-	"githubClientId": "2d3459b3061dfd27602b",
-	"githubClientSecret": "5f2986d989b34c371b6ce2b9d858563ea1f9fd14",
-	"githubToken": " 447360c093e9714136d5769fe000bf095fac59bc"
-}
